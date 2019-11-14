@@ -31,7 +31,7 @@
       </div>
 
       <div class="navbar-end">
-        <a class="navbar-item">
+        <a class="navbar-item" href="search.html">
           Search
         </a>
 
@@ -41,103 +41,167 @@
       </div>
     </nav>
 
-    <section class="section has-background-danger">
+    <section class="section has-background-warning">
       <div class="tile is-ancestor">
         <div class="tile is-4 is-parent">
           <div class="tile is-child box">
             <p class="title">Filter</p>
-            <div class="panel">
-              <p class="panel-heading">Select your options</p>
-              <label class="panel-block">
-                <input type="checkbox" />
-                Movies
-              </label>
-              <label class="panel-block">
-                <input type="checkbox" />
-                Shows
-              </label>
-              <label class="panel-block">
-                <input type="checkbox" />
-                Random
-              </label>
-              <div class="panel-block">
-                <button class="button is-link is-fullwidth">
-                  Reset all filters
-                </button>
+            <form>
+              <div>
+                Select a rating range. <br />
+                <input type="text" value="Lower bound rating" id="lower" />
+                to
+                <input type="text" value="Upper bound rating" id="upper" />
               </div>
-            </div>
+              <br />
+              <div>
+                Select streaming platform. <br />
+                <input type="checkbox" id="netflix_box" /> Netflix <br />
+                <input type="checkbox" id="hbo_box" /> HBO <br />
+                <input type="checkbox" id="amazon_box" /> Amazon Prime <br />
+              </div>
+              <br />
+              <div>
+                Select year. <br />
+                <input type="text" id="year_box" value="Year" /> <br />
+              </div>
+              <br />
+              <div>
+                Enter production companies, seperated by comma. <br />
+                <input
+                  type="text"
+                  id="production_box"
+                  value="Production Companies"
+                />
+                <br />
+              </div>
+              <br />
+              <div>
+                <button type="submit" class="find">Find your service!</button>
+                <button type="submit" id="reset">Reset filters</button>
+              </div>
+            </form>
           </div>
         </div>
         <div class="tile is-parent is-vertical">
           <div class="tile is-child box ">
             <p class="title">Netflix</p>
-            <p class="content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-              semper diam at erat pulvinar, at pulvinar felis blandit.
-              Vestibulum volutpat tellus diam, consequat gravida libero rhoncus
-              ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta
-              orci, quis semper odio felis ut quam.
-            </p>
             <ul class="">
-              <li>
-                sd
+              <li class="netflix_stat1">
+                netflix_stat1
               </li>
-              <li>
-                sd
+              <li class="netflix_stat2">
+                netflix_stat2
               </li>
             </ul>
             <br />
-            <nav class="level tile is-child box">
-              <div class="level-item has-background-warning">
-                <header class="card-header">
-                  <p class="card-header-title">
-                    Movie
-                  </p>
-                </header>
-                <div class="card-content">
-                  <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris.
-                  </div>
+            <div class="card">
+              <header class="card-header">
+                <p class="card-header-title netflix_movie1">
+                  Movie
+                </p>
+              </header>
+              <div class="card-content">
+                <div class="content netflix_movie1_info">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus nec iaculis mauris.
                 </div>
               </div>
-              <br />
-              <div class="level-item has-background-warning">
-                <header class="card-header">
-                  <p class="card-header-title">
-                    Movie
-                  </p>
-                </header>
-                <div class="card-content">
-                  <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris.
-                  </div>
+            </div>
+            <br />
+            <div class="card">
+              <header class="card-header">
+                <p class="card-header-title netflix_movie2">
+                  Movie
+                </p>
+              </header>
+              <div class="card-content">
+                <div class="content netflix_movie2_info">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus nec iaculis mauris.
                 </div>
               </div>
-            </nav>
+            </div>
           </div>
           <div class="tile is-child box">
             <p class="title">HBO</p>
-            <p class="content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-              semper diam at erat pulvinar, at pulvinar felis blandit.
-              Vestibulum volutpat tellus diam, consequat gravida libero rhoncus
-              ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta
-              orci, quis semper odio felis ut quam.
-            </p>
+            <ul class="">
+              <li class="hbo_stat1">
+                hbo_stat1
+              </li>
+              <li class="hbo_stat2">
+                hbo_stat2
+              </li>
+            </ul>
+            <br />
+            <div class="card">
+              <header class="card-header">
+                <p class="card-header-title hbo_movie1">
+                  Movie
+                </p>
+              </header>
+              <div class="card-content">
+                <div class="content hbo_movie1_info">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus nec iaculis mauris.
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="card">
+              <header class="card-header">
+                <p class="card-header-title hbo_movie2">
+                  Movie
+                </p>
+              </header>
+              <div class="card-content">
+                <div class="content hbo_movie2_info">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus nec iaculis mauris.
+                </div>
+              </div>
+            </div>
             <br />
             <div class="tile is-child box"></div>
           </div>
           <div class="tile is-child box">
             <p class="title">Amazon Prime</p>
-            <p class="content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-              semper diam at erat pulvinar, at pulvinar felis blandit.
-              Vestibulum volutpat tellus diam, consequat gravida libero rhoncus
-              ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta
-              orci, quis semper odio felis ut quam.
-            </p>
+            <ul class="">
+              <li class="prime_stat1">
+                prime stat1
+              </li>
+              <li class="prime_stat2">
+                prime stat2
+              </li>
+            </ul>
+            <br />
+            <div class="card">
+              <header class="card-header">
+                <p class="card-header-title prime_movie1">
+                  Movie
+                </p>
+              </header>
+              <div class="card-content">
+                <div class="content prime_movie1_info">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus nec iaculis mauris.
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="card">
+              <header class="card-header">
+                <p class="card-header-title prime_movie2">
+                  Movie
+                </p>
+              </header>
+              <div class="card-content">
+                <div class="content prime_movie2_info">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus nec iaculis mauris.
+                </div>
+              </div>
+            </div>
             <br />
             <div class="tile is-child box"></div>
           </div>
