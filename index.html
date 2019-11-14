@@ -17,6 +17,7 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
+    <script src="render.js"></script>
   </head>
   <body>
     <nav
@@ -29,16 +30,6 @@
           <div class="title">Streamify</div>
         </a>
       </div>
-
-      <div class="navbar-end">
-        <a class="navbar-item" href="search.html">
-          Search
-        </a>
-
-        <a class="navbar-item">
-          Alexa
-        </a>
-      </div>
     </nav>
 
     <section class="section has-background-warning">
@@ -46,39 +37,67 @@
         <div class="tile is-4 is-parent">
           <div class="tile is-child box">
             <p class="title">Filter</p>
-            <form>
+            <form id="root">
               <div>
                 Select a rating range. <br />
-                <input type="text" value="Lower bound rating" id="lower" />
+                <input
+                  type="text"
+                  value="0"
+                  id="lower_rating"
+                  class="input is-hovered"
+                />
                 to
-                <input type="text" value="Upper bound rating" id="upper" />
+                <input
+                  type="text"
+                  value="10"
+                  id="upper_rating"
+                  class="input is-hovered"
+                />
               </div>
               <br />
-              <div>
+              <!-- <div>
                 Select streaming platform. <br />
                 <input type="checkbox" id="netflix_box" /> Netflix <br />
                 <input type="checkbox" id="hbo_box" /> HBO <br />
                 <input type="checkbox" id="amazon_box" /> Amazon Prime <br />
               </div>
-              <br />
+              <br /> -->
               <div>
-                Select year. <br />
-                <input type="text" id="year_box" value="Year" /> <br />
-              </div>
-              <br />
-              <div>
-                Enter production companies, seperated by comma. <br />
+                Select year range. <br />
                 <input
                   type="text"
-                  id="production_box"
-                  value="Production Companies"
+                  value="1990"
+                  id="lower_year"
+                  class="input is-hovered"
+                />
+                to
+                <input
+                  type="text"
+                  value="2010"
+                  id="upper_year"
+                  class="input is-hovered"
                 />
                 <br />
               </div>
               <br />
+              <!-- <div>
+                Enter production companies, separated by comma. <br />
+                <input
+                  type="text"
+                  id="production_box"
+                  value=""
+                  class="input is-hovered"
+                />
+                <br />
+              </div>
+              <br /> -->
               <div>
-                <button type="submit" class="find">Find your service!</button>
-                <button type="submit" id="reset">Reset filters</button>
+                <button type="submit" id="find" class="button is-link">
+                  Find your service!
+                </button>
+                <!-- <button type="submit" id="reset" class="button is-link">
+                  Reset filters
+                </button> -->
               </div>
             </form>
           </div>
@@ -86,14 +105,7 @@
         <div class="tile is-parent is-vertical">
           <div class="tile is-child box ">
             <p class="title">Netflix</p>
-            <ul class="">
-              <li class="netflix_stat1">
-                netflix_stat1
-              </li>
-              <li class="netflix_stat2">
-                netflix_stat2
-              </li>
-            </ul>
+            <p id="netflix"></p>
             <br />
             <div class="card">
               <header class="card-header">
@@ -125,14 +137,7 @@
           </div>
           <div class="tile is-child box">
             <p class="title">HBO</p>
-            <ul class="">
-              <li class="hbo_stat1">
-                hbo_stat1
-              </li>
-              <li class="hbo_stat2">
-                hbo_stat2
-              </li>
-            </ul>
+            <p id="hbo"></p>
             <br />
             <div class="card">
               <header class="card-header">
@@ -166,14 +171,7 @@
           </div>
           <div class="tile is-child box">
             <p class="title">Amazon Prime</p>
-            <ul class="">
-              <li class="prime_stat1">
-                prime stat1
-              </li>
-              <li class="prime_stat2">
-                prime stat2
-              </li>
-            </ul>
+            <p id="prime"></p>
             <br />
             <div class="card">
               <header class="card-header">
