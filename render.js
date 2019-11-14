@@ -166,11 +166,23 @@ var user = new User();
 
 const loadNetflixStats = function() {
   const $netflix = $("#netflix");
-  return `<div class = ""  id = "netflixcard">
+  let i = user.getStats().netflix.count;
+  if (i > 5) {
+    i = 5;
+  }
+  let ret = "";
+  for (let j = 0; j < i; j++) {
+    $(netflix).append(
+      `<p><span> ${user.getStats().netflix.list[j].title}</span></p>`
+    );
+  }
+  return (
+    `<div class = ""  id = "netflixcard">
     <p><span> ${user.getStats().netflix.count}  matched your search</span></p>
     <br/>
     <a href="https://www.netflix.com/signup/planform"><button class = "button" name = "submit" type="button">More Information</button>
-    </a></div>`;
+    </a></div>` + ret
+  );
 };
 
 const loadnetTitles = function() {
@@ -180,8 +192,9 @@ const loadnetTitles = function() {
   }
   let ret = "";
   for (let j = 0; j < i; j++) {
-    ret + `<p><span> ${user.getStats().netflix.list[1].title}</span></p>`;
-    console.log(user.getStats().netflix.list[j].title);
+    $(netflix).append(
+      `<p><span> ${user.getStats().netflix.list[1].title}</span></p>`
+    );
   }
   return ret;
 };
@@ -211,20 +224,43 @@ const loadprimetTitles = function() {
 };
 
 const loadHBOStats = function() {
+  let i = user.getStats().hbo.count;
+  if (i > 5) {
+    i = 5;
+  }
+  let ret = "";
+  for (let j = 0; j < i; j++) {
+    $(hbo).append(`<p><span> ${user.getStats().hbo.list[j].title}</span></p>`);
+  }
   const $hbo = $("#hbo");
-  return `<div class = ""  id = "hbocard">
+  return (
+    `<div class = ""  id = "hbocard">
     <p><span> ${user.getStats().hbo.count}  matched your search</span></p>
     <br />
     <a href="https://subscribe.hbonow.com/?origin=orderTrial"><button class = "submit button" name = "submit" type="button">More Information</button>
-    </a></div>`;
+    </a></div>` + ret
+  );
 };
 const loadPrimeStats = function() {
   const $prime = $("#prime");
-  return `<div class = ""  id = "primecard">
+
+  let i = user.getStats().prime.count;
+  if (i > 5) {
+    i = 5;
+  }
+  let ret = "";
+  for (let j = 0; j < i; j++) {
+    $(prime).append(
+      `<p><span> ${user.getStats().prime.list[j].title}</span></p>`
+    );
+  }
+  return (
+    `<div class = ""  id = "primecard">
     <p><span> ${user.getStats().prime.count}  matched your search</span></p>
     <br />
     <a href="https://www.amazon.com/gp/video/offers/ref=dvm_us_dl_sl_bi_brw|c_13727457773_m_tqKSdolx-dc_/137-6902058-1210449"><button class = "submit button" name = "submit" type="button">More Information</button>
-    </a></div>`;
+    </a></div>` + ret
+  );
 };
 
 const eventHandler = function() {
